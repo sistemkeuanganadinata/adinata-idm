@@ -1,1 +1,127 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADINATA IDMS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f5f9;color:#202b3c}
+header{background:#14243d;color:white;padding:22px}
+header h2{margin:0;font-size:21px;letter-spacing:1px}
+header p{margin:7px 0 0;color:#bdc9dc;font-size:12px}
+nav{background:#1b304e;padding:12px;display:flex;gap:9px;overflow-x:auto}
+nav a{color:white;text-decoration:none;padding:10px 13px;border-radius:7px;white-space:nowrap;font-size:13px}
+nav a:hover{background:#365477}
+main{padding:20px;max-width:1200px;margin:auto}
+h2{font-size:19px}
+.sub{color:#778397;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:20px 0}
+.card{background:white;padding:19px;border-radius:12px;box-shadow:0 2px 10px #172b4510}
+.card small{color:#7d8999}
+.amount{font-size:23px;font-weight:bold;margin-top:12px}
+.blue{color:#2458a6}
+.green{color:#16845b}
+.orange{color:#c47b20}
+.red{color:#c34d4d}
+.panel{background:white;padding:20px;border-radius:12px;margin:16px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:450px}
+th,td{text-align:left;padding:13px;border-bottom:1px solid #edf0f4;font-size:13px}
+th{color:#778397}
+input,select{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #dce2eb;border-radius:7px}
+button{background:#214d83;color:white;border:0;padding:12px 18px;border-radius:7px;font-weight:bold}
+.note{background:#fff7e8;border-left:4px solid #e6a23c;padding:13px;font-size:13px;line-height:1.6}
+footer{text-align:center;color:#8993a2;font-size:12px;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h2>ADINATA IDMS</h2>
+<p>INTEGRATED DISTRIBUTOR MANAGEMENT SYSTEM</p>
+</header>
+<nav>
+<a href="#dashboard">Dashboard</a>
+<a href="#keuangan">Keuangan</a>
+<a href="#rekening">Rekening</a>
+<a href="#transaksi">Transaksi</a>
+<a href="#stok">Stok</a>
+<a href="#audit">AI Audit</a>
+<a href="#laporan">Laporan</a>
+</nav>
+<main>
+<section id="dashboard">
+<h2>Dashboard Owner</h2>
+<p class="sub">Pusat kontrol seluruh aktivitas usaha</p>
+<div class="grid">
+<div class="card"><small>Total Saldo Kas & Bank</small><div class="amount blue">Rp 0</div></div>
+<div class="card"><small>Total Penjualan</small><div class="amount green">Rp 0</div></div>
+<div class="card"><small>Total Piutang</small><div class="amount orange">Rp 0</div></div>
+<div class="card"><small>Total Utang</small><div class="amount red">Rp 0</div></div>
+</div>
+</section>
+
+<section id="keuangan" class="panel">
+<h2>Kontrol Keuangan</h2>
+<p class="sub">Pemisahan pembukuan berdasarkan entitas usaha</p>
+<table>
+<tr><th>Entitas</th><th>Divisi</th><th>Status</th></tr>
+<tr><td>CV Adinata Bintang Gemilang</td><td>KAO</td><td>Terpisah</td></tr>
+<tr><td>CV Adinata Bintang Gemilang</td><td>Fastrata</td><td>Terpisah</td></tr>
+<tr><td>Toko Dania</td><td>Usaha pribadi</td><td>Terpisah</td></tr>
+</table>
+</section>
+
+<section id="rekening" class="panel">
+<h2>Daftar Rekening</h2>
+<table>
+<tr><th>Rekening</th><th>Entitas</th><th>Saldo</th></tr>
+<tr><td>KAO</td><td>CV Adinata</td><td>Rp 0</td></tr>
+<tr><td>Fastrata</td><td>CV Adinata</td><td>Rp 0</td></tr>
+<tr><td>CBM</td><td>CV Adinata - KAO</td><td>Rp 0</td></tr>
+<tr><td>Dania Lama</td><td>Toko Dania</td><td>Rp 0</td></tr>
+<tr><td>Dania New</td><td>Toko Dania</td><td>Rp 0</td></tr>
+<tr><td>Dania 1, 2, 3</td><td>Toko Dania</td><td>Rp 0</td></tr>
+</table>
+</section>
+
+<section id="transaksi" class="panel">
+<h2>Input Transaksi</h2>
+<p class="sub">Contoh tampilan formulir transaksi</p>
+<label>Tanggal</label>
+<input type="date">
+<label>Entitas</label>
+<select><option>CV Adinata Bintang Gemilang</option><option>Toko Dania</option></select>
+<label>Divisi</label>
+<select><option>KAO</option><option>Fastrata</option><option>Toko Dania</option></select>
+<label>Jenis transaksi</label>
+<select><option>Uang masuk</option><option>Uang keluar</option></select>
+<label>Nominal (Rp)</label>
+<input type="number" placeholder="Masukkan nominal">
+<label>Keterangan</label>
+<input type="text" placeholder="Tujuan transaksi">
+<button type="button" onclick="alert('Ini masih prototipe. Transaksi belum disimpan ke database.')">Simpan Transaksi</button>
+</section>
+
+<section id="stok" class="panel">
+<h2>Kontrol Persediaan</h2>
+<p>Persediaan KAO, Fastrata, dan Toko Dania akan dipantau secara terpisah.</p>
+</section>
+
+<section id="audit" class="panel">
+<h2>AI Audit & Rekonsiliasi</h2>
+<p>Modul pemeriksaan transaksi, rekening koran, invoice, selisih saldo, dan aliran dana akan diintegrasikan pada tahap berikutnya.</p>
+</section>
+
+<section id="laporan" class="panel">
+<h2>Laporan Keuangan</h2>
+<p>Laporan laba rugi, neraca, arus kas, piutang, utang, dan laporan per entitas.</p>
+</section>
+
+<div class="note">
+<strong>Informasi:</strong> Ini adalah prototipe tampilan awal. Angka masih nol dan formulir belum terhubung ke database Supabase. Data asli tidak boleh dimasukkan sampai sistem login, hak akses, dan penyimpanan data selesai diuji.
+</div>
+</main>
+<footer>ADINATA IDMS © 2026 — OWNER CONTROL SYSTEM</footer>
+</body>
+</html>
